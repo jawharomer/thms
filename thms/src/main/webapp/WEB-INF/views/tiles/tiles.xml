@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Base Definition -->
+	<definition name="base-definition"
+		template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />
+		<put-attribute name="pageCSS" value=""></put-attribute>
+		<put-attribute name="body" value="" />
+
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />
+
+		<put-list-attribute name="requiredCSSFiles">
+		</put-list-attribute>
+
+		<put-list-attribute name="requiredJSFiles">
+		</put-list-attribute>
+
+	</definition>
+
+
+
+	<!-- Admin page -->
+	<definition name="adminRoot" extends="base-definition">
+		<put-attribute name="title" value="Stock" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/root.jsp" />
+		<put-attribute name="adminBody" value="" cascade="true" />
+
+		<put-list-attribute name="requiredCSSFiles">
+			<add-attribute value="bootstrap" />
+			<add-attribute value="font-awesome" />
+			<add-attribute value="jquery-ui" />
+			<add-attribute value="jquery.dataTables" />
+			<add-attribute value="app" />
+			<add-attribute value="admin" />
+		</put-list-attribute>
+
+		<put-list-attribute name="requiredJSFiles">
+			<add-attribute value="jquery" />
+			<add-attribute value="jquery-ui" />
+			<add-attribute value="bootstrap" />
+			<add-attribute value="angular" />
+			<add-attribute value="jquery.serializejson" />
+			<add-attribute value="jquery.dataTables" />
+			<!-- S-DataTableLib -->
+			<add-attribute value="dt/dataTables.buttons.min" />
+			<add-attribute value="dt/buttons.flash.min" />
+			<add-attribute value="dt/jszip.min" />
+			<add-attribute value="dt/pdfmake.min" />
+			<add-attribute value="dt/vfs_fonts" />
+			<add-attribute value="dt/buttons.html5.min" />
+			<add-attribute value="dt/buttons.print.min" />
+			<!-- E-DataTableLib -->
+			<add-attribute value="app" />
+			<add-attribute value="admin" />
+		</put-list-attribute>
+
+	</definition>
+
+
+	<!-- Notifications -->
+	<definition name="notifications" extends="adminRoot">
+		<put-attribute name="title" value="orderDetails" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/admin/notifications.jsp" cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+		</put-list-attribute>
+
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+		</put-list-attribute>
+	</definition>
+	
+	
+	<!-- PatientVisits -->
+	<definition name="patientVisits" extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/patientVisits.jsp" cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="patientVisits" />
+		</put-list-attribute>
+
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="patientVisits" />
+		</put-list-attribute>
+	</definition>
+	
+	
+	<!-- PatientVisitCourse -->
+	<definition name="patientVisitCourse" extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/patientVisitCourse.jsp" cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="patientVisitCourse" />
+		</put-list-attribute>
+
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="patientVisitCourse" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Edit Patient -->
+	<definition name="editPatient" extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patient/editPatient.jsp" cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="editPatient" />
+		</put-list-attribute>
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="editPatient" />
+		</put-list-attribute>
+	</definition>
+
+
+	<!-- ReceptionPatientVisits -->
+	<definition name="receptionPatientVisits"
+		extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/receptionPatientVisits.jsp"
+			cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="receptionPatientVisits" />
+		</put-list-attribute>
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="receptionPatientVisits" />
+		</put-list-attribute>
+	</definition>
+
+
+	<!-- Add PatientVisit -->
+	<definition name="addPatientVisit" extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/addPatientVisit.jsp"
+			cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="addPatientVisit" />
+		</put-list-attribute>
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="addPatientVisit" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Edit PatientVisit -->
+	<definition name="editPatientVisit" extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/editPatientVisit.jsp"
+			cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="editPatientVisit" />
+		</put-list-attribute>
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="editPatientVisit" />
+		</put-list-attribute>
+	</definition>
+	
+	<!-- PatientVisitAttends -->
+	<definition name="patientVisitAttends" extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/patientVisitAttends.jsp"
+			cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="patientVisitAttends" />
+		</put-list-attribute>
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="patientVisitAttends" />
+		</put-list-attribute>
+	</definition>
+
+
+</tiles-definitions>
