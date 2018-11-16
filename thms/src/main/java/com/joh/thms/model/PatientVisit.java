@@ -27,7 +27,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.joh.thms.validator.PatientVisitValidation;
 
 @Entity
-@Table(name = "THMS_PATIENT_VISITS")
+@Table(name = "XHMS_PATIENT_VISITS")
 public class PatientVisit {
 
 	@Column(name = "I_PATIENT_VISIT")
